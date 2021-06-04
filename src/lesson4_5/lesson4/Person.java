@@ -1,4 +1,4 @@
-package lesson4.lesson;
+package lesson4_5.lesson4;
 
 public class Person {
     private int age;
