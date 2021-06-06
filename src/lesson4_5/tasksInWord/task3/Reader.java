@@ -1,4 +1,4 @@
-package lesson4_5.tasks.task3;
+package lesson4_5.tasksInWord.task3;
 
 public class Reader {
     private String name;

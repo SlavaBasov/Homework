@@ -1,5 +1,6 @@
 package lesson4_5.lesson5.task2;
 
+
 public class Group {
     private String name;
     private Student[] students = new Student[4];
@@ -11,9 +12,9 @@ public class Group {
         this.name = name;
     }
 
-    public Group(String name, Student[] students) {
+    public Group(String name, Student[] students1) {
         this.name = name;
-        this.students = students;
+        this.students = students1;
     }
 
     public Group(String name, Student student1, Student student2, Student student3, Student student4) {
@@ -36,8 +37,8 @@ public class Group {
         return students;
     }
 
-    public void setStudents(Student[] students) {
-        this.students = students;
+    public void setStudents(Student[] students1) {
+        this.students = students1;
     }
 
     public void getInfo(){

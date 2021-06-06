@@ -1,4 +1,4 @@
-package lesson4_5.tasks.matrix;
+package lesson4_5.tasksInWord.matrix;
 
 public class Matrix {
     private int[][] array;

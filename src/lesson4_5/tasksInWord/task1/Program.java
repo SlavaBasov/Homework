@@ -1,4 +1,4 @@
-package lesson4_5.tasks.task1;
+package lesson4_5.tasksInWord.task1;
 
 public class Program {
     public static void main(String[] args) {
