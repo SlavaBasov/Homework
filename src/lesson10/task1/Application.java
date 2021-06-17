@@ -4,6 +4,7 @@ import lesson10.task1.exceptions.OddNumberException;
 import lesson10.task1.util.CarHandler;
 
 //Дополнительно вынести бренд машины в Еnum
+//Создать CarGenerator(класс с методом)
 
 
 public class Application {
