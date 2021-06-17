@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Task3 {
     public static void main(String[] args) throws IOException {
-        File file = new File("src/lesson9/task3/File");
         FileReader fileReader = new FileReader("src/lesson9/task3/File");
         FileWriter fileWriter = new FileWriter("src/lesson9/task3/File1", false);
         Scanner scanner = new Scanner(fileReader);
