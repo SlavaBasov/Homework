@@ -6,13 +6,13 @@ import java.util.Random;
 
 public class Car {
     private String brand;
-    private double speed;
-    private double price;
+    private int speed;
+    private int price;
 
     public Car() {
     }
 
-    public Car(String brand, double speed, double price) {
+    public Car(String brand, int speed, int price) {
         this.brand = brand;
         this.speed = speed;
         this.price = price;
@@ -30,7 +30,7 @@ public class Car {
         return speed;
     }
 
-    public void setSpeed(double speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
 
@@ -38,7 +38,7 @@ public class Car {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -46,9 +46,9 @@ public class Car {
         Random random = new Random();
         int num = random.nextInt(21);
         if(num % 2 == 0){
-            throw new OddNumberException(num, brand);
+            throw new OddNumberException(num, brand, speed, price);
         } else {
-            System.out.printf("Car %s started successfully\n", brand);
+            System.out.printf("Car %s started successfully(speed = %d, price = %d)\n", brand, speed, price);
         }
 
     }
