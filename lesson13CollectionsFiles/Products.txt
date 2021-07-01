@@ -1,0 +1,6 @@
+ID-------Name-------Price------Type
+1      Iphone11     2500     Bestseller
+2      LaptopHP    2000     Regular
+3      CoffeMaker    1000     Special
+4      LadaKalina    20000    Regular
+5        Mouse        50   Special

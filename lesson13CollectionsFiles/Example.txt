@@ -1,0 +1,6 @@
+Example
+add(123, Laptop, 2500, Regular) - добавить товар
+show all - показать все товары
+
+delete(id номер) - удалить товар
+edit(123, Laptop, 2500, Regular) - изменить товар

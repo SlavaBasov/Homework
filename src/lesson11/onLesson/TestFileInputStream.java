@@ -1,14 +1,13 @@
-package lesson11;
+package lesson11.onLesson;
 
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.Buffer;
 
-public class TestFileReader {
+public class TestFileInputStream {
     public static void main(String[] args) {
-        try(FileReader fin = new FileReader("Lesson11Text.txt");
-            FileWriter fr = new FileWriter("Lesson11Text2.txt")){
+        try(FileInputStream fin = new FileInputStream("Lesson11Text.txt")){
             /*Buffer buffer = new Buffer();
             fin.read(buffer, 0, fin.available());*/
         } catch (IOException e) {

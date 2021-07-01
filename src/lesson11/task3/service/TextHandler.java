@@ -15,7 +15,7 @@ public class TextHandler {
             String line;
             StringBuilder builder = new StringBuilder();
             while ((line = reader1.readLine()) != null){
-                builder.append(line);
+                builder.append(line + " ");
             }
             line = builder.toString();
             lines = line.split("\\s*(\\?|\\.|!)\\s*");

@@ -1,0 +1,3 @@
+Bestseller 10
+Regular 0
+Special 5
