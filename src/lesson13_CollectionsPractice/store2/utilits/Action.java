@@ -27,11 +27,12 @@ public class Action {
                     } else {
                         System.out.println("Объект " + lines[2] + " уже есть");
                     }
-                } /*else if (line.startsWith("edit")) {
+                } else if (line.startsWith("edit")) {
                     lines = line.split("\\s+|(,+\\s+)|\\(|\\)");
-                    if(shop.editProduct(new Product(Integer.parseInt(lines[1]), lines[2], Integer.parseInt(lines[3]), shopGetter.getTypes().get(lines[4])))){
+                    Product p = new Product(Integer.parseInt(lines[1]), lines[2], Integer.parseInt(lines[3]), shopGetter.getTypes().get(lines[4]));
+                    if(shop.editProduct(p)){
                         System.out.println("Объект " + lines[1] + " успешно изменен");
-                        //editAddedObject(shopGetter.getProducts().get(Integer.parseInt(lines[1])));
+                        editAddedObject(p);
                     } else {
                         System.out.println("Объект " + lines[1] + " отсутствует");
                     }
@@ -39,10 +40,11 @@ public class Action {
                     lines = line.split("\\s+|(,+\\s+)|\\(|\\)");
                     if(shop.deleteProduct(Integer.parseInt(lines[1]))){
                         System.out.println("Объект " + lines[1] + " успешно удален");
+                        //deleteObjectInFile();
                     } else {
                         System.out.println("Объект " + lines[1] + " отсутствует");
                     }
-                }*/
+                }
 
             }
         } catch (FileNotFoundException e) {
@@ -60,27 +62,53 @@ public class Action {
         }
     }
 
-    /*private static void editAddedObject(Product product){
-        try(BufferedReader reader = new BufferedReader(new FileReader("lesson13CollectionsFiles/Products.txt"));
-            BufferedWriter writer = new BufferedWriter(new FileWriter("lesson13CollectionsFiles/Products.txt", false)))
-        {
+
+    private static void editAddedObject(Product product){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("lesson13CollectionsFiles/Products.txt"));
             ArrayList<String> lines = new ArrayList<>();
-            Iterator<String> iterator = lines.iterator();
+            Iterator<String> iterator = reader.lines().iterator();
             while(iterator.hasNext()){
                 lines.add(iterator.next());
             }
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("lesson13CollectionsFiles/Products.txt", false));
             for (String s: lines){
                 if(s.startsWith(String.valueOf(product.getId()))){
-                    writer.write(String.format("\n%d   %10s%10d%10s", product.getId(), product.getName(),product.getPrice(),product.getType().getName()));
+                    writer.write(String.format("%d   %10s%10d    %10s\n", product.getId(), product.getName(),product.getPrice(),product.getType().getName()));
                 } else {
-                    writer.write(s);
+                    writer.write(s + "\n");
                 }
             }
-            writer.write(String.format("\n%d   %10s%10d%10s", product.getId(), product.getName(), product.getPrice(), product.getType().getName()));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            reader.close();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+        }
+    }
+
+    /*private static void deleteObjectInFile(Product product){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("lesson13CollectionsFiles/Products.txt"));
+            ArrayList<String> lines = new ArrayList<>();
+            Iterator<String> iterator = reader.lines().iterator();
+            while(iterator.hasNext()){
+                lines.add(iterator.next());
+            }
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("lesson13CollectionsFiles/Products.txt", false));
+            for (String s: lines){
+                if(!s.startsWith(String.valueOf(product.getId()))){
+                    writer.write(s + "\n");
+                }
+            }
+            reader.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
         }
     }*/
+
 }

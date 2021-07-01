@@ -1,6 +1,7 @@
 show all
-add(5, Mouse, 50, Special)
-show all
+edit(6, BMW, 50000, Special)
+
+
 
 
 

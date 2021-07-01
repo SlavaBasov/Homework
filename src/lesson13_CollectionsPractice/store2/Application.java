@@ -12,9 +12,11 @@ import java.util.TreeMap;
 
 public class Application {
     public static void main(String[] args) {
+
         ShopGetter shopGetter = new ShopGetter("lesson13CollectionsFiles/Types.txt", "lesson13CollectionsFiles/Products.txt");
         Shop shop = new Shop(shopGetter.getProducts());
         Action.action("lesson13CollectionsFiles/Action.txt", shop, shopGetter);
+        shopGetter.getProducts().get(0);
 
 
 
