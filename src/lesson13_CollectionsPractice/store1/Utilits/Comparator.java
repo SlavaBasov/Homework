@@ -13,6 +13,4 @@ public class Comparator implements java.util.Comparator<Product> {
             return 0;
         }
     }
-
-
 }

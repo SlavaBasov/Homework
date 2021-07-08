@@ -4,5 +4,4 @@ ID-------Name-------Price------Type
 3      CoffeeMaker    1000     Special
 4      LadaKalina    20000    Regular
 5        Mouse        50   Special
-
 6          BMW     50000       Special
