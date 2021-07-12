@@ -87,7 +87,16 @@ public class Application {
 
 
         //сгруппировать по названию работы
+
+//ПРОРЕШАТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //посчитать зп всех сотрудников
+       // Map<String, Integer> statistics1 = employeeList.stream()
+       //         .collect(Collectors.toMap(, Collectors.summingInt(i->i.)
+
+
+
+      //  Map<String, List<Employee>> collect = employeeList.stream().collect(Collectors.groupingBy(Employee::getJob));
+      //  Map<String> =employeeList.stream().collect(Collectors.groupingBy(Employee::getJob))
         //посчитать зп по каждой работе(мапа ключ - название работы, значение IntsummaryStatistic)
 
     }
