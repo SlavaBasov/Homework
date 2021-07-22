@@ -111,15 +111,40 @@ public class Application {
 
 
         //сгруппировать по названию работы
+        List<Job> jobs = List.of(programmer, teacher, doctor, driver);
         Map<Object, List<Employee>> map = employeeList.stream()
                 .collect(Collectors.groupingBy(employee -> employee.getJob().stream().map(Job::getName), Collectors.toList()));
 
-        for(Map.Entry<Object, List<Employee>> e: map.entrySet()){
+        Iterator<Job> iteratorJob = jobs.listIterator();
+        Map<String, Employee> jobsEmployees = new HashMap<>();
+        Job a = null;
+        while (iteratorJob.hasNext()){
+            a = iteratorJob.next();
+            a.getName();
+            for(Employee emp: employeeList){
+                List<String> job1= emp.getJob().stream().map(Job::getName).peek(i-> System.out.print("Current element" + i + " ")).collect(Collectors.toList());
+                for(String s: job1){
+                    if(a.toString().equals(s.toString())){
+                        jobsEmployees.put(a.toString(), emp);
+                    }
+                }
+            }
+        }
+        jobsEmployees.entrySet().stream().forEach(System.out::println);
+        //PEEEEEEEK(peek -  показать промежуточные действия)
+
+
+        /*List<Set<Job>> e = employeeList.stream().map(Employee::getJob).collect(Collectors.toList());
+        for(Set<Job> job: e){
+            job.stream().forEach(System.out::println);
+        }*/
+
+        /*for(Map.Entry<Object, List<Employee>> e: map.entrySet()){
             System.out.println(e.getKey().toString());
             for (Employee l: e.getValue()){
                 System.out.printf("Employee: %s, age- %d\n", l.getName(), l.getAge());
             }
-        }
+        }*/
 
 
 //ПРОРЕШАТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
